@@ -10,15 +10,20 @@ namespace SceneStudio
         /// <summary>
         /// 回転する対象
         /// </summary>
-        public Transform Target;
+        private Transform target;
+
+        private void Awake()
+        {
+            target = transform.parent;
+        }
 
         void Update()
         {
-            transform.position = Target.position;
+            transform.position = target.position;
 
-            if (transform.parent != null && transform.parent != Target)
+            if (transform.parent != null && transform.parent != target)
             {
-                Target.rotation = transform.rotation;
+                target.rotation = transform.rotation;
             }
         }
     }

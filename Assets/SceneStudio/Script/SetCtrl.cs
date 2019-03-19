@@ -61,7 +61,6 @@ namespace SceneStudio
                     {
                         // 回転操作
                         var rot = Instantiate(Rotation);
-                        rot.GetComponent<ObjRot>().Target = child;
                         Set(rot, child, Rotation.transform.lossyScale);
                         if (heightMax < child.transform.position.y)
                         {
